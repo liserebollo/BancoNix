@@ -1,0 +1,11 @@
+@import '../../common/styles/colors.scss';
+
+custom-table {
+  .ui-grid-header-cell-wrapper{
+    height: inherit;
+  }
+
+  .grid{
+    margin-top: 20px;
+  }
+}

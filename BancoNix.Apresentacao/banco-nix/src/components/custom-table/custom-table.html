@@ -1,0 +1,41 @@
+<div ui-i18n="{{'pt-br'}}">
+
+  <label for="pagadorNome"> Nome do Pagador
+    <input name="pagadorNome" type="text" ng-model="filter.nomePagador" ng-change="filtroAlterado()">
+  </label>
+
+  <label for="beneficiarioNome"> Nome do Beneficiario
+    <input name="beneficiarioNome" type="text" ng-model="filter.nomeBeneficiario" ng-change="filtroAlterado()">
+  </label>
+
+  <label for="data"> Data
+    <input name="data" type="date" ng-model="filter.data" ng-change="filtroAlterado()">
+  </label>
+
+  <label for="tipo"> Tipo
+    <select name="tipo" id="tipo" ng-model="filter.tipo" ng-change="filtroAlterado()">
+      <option value=""></option>
+      <option value="CC">CC</option>
+      <option value="DOC">DOC</option>
+      <option value="TED">TED</option>
+    </select>
+  </label>
+
+  <label for="status"> Status
+    <select name="status" id="status" ng-model="filter.status" ng-change="filtroAlterado()">
+      <option value=""></option>
+      <option value="OK">Ok</option>
+      <option value="ERRO">Erro</option>
+    </select>
+  </label>
+
+  <div>
+    <button class='btn delete' ng-disabled="linhaSelecionada == undefined" ng-click="deletar()">Excluir</button>
+  </div>
+
+  <div>
+    <h2>Somatória: R{{somatoria | currency}}</h2>
+  </div>
+
+  <div ui-grid="gridOptions" ui-grid-pagination ui-grid-resize-columns ui-grid-selection class="grid"></div>
+</div>
